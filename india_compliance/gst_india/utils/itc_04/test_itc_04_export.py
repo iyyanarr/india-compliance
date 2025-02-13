@@ -1,4 +1,4 @@
-from frappe.tests import IntegrationTestCase
+from frappe.tests.utils import FrappeTestCase
 from erpnext.controllers.tests.test_subcontracting_controller import get_rm_items
 from erpnext.subcontracting.doctype.subcontracting_order.subcontracting_order import (
     make_subcontracting_receipt,
@@ -74,7 +74,7 @@ response = {
 }
 
 
-class TestITC04Export(IntegrationTestCase):
+class TestITC04Export(FrappeTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()

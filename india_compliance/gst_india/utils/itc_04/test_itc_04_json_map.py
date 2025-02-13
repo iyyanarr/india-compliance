@@ -1,6 +1,6 @@
 import copy
 
-from frappe.tests import IntegrationTestCase
+from frappe.tests.utils import FrappeTestCase
 
 from india_compliance.gst_india.doctype.gst_return_log.generate_gstr_1 import (
     GenerateGSTR1,
@@ -22,7 +22,7 @@ def normalize_data(data):
     return GenerateGSTR1().normalize_data(data)
 
 
-class TestFGReceived(IntegrationTestCase):
+class TestFGReceived(FrappeTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
@@ -95,7 +95,7 @@ class TestFGReceived(IntegrationTestCase):
         self.assertListEqual(self.json_data, output)
 
 
-class TestRMSent(IntegrationTestCase):
+class TestRMSent(FrappeTestCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
